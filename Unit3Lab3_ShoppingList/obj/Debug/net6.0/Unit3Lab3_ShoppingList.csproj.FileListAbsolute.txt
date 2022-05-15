@@ -13,3 +13,18 @@ C:\Users\xando\source\repos\Unit3Lab3_ShoppingList\Unit3Lab3_ShoppingList\obj\De
 C:\Users\xando\source\repos\Unit3Lab3_ShoppingList\Unit3Lab3_ShoppingList\obj\Debug\net6.0\Unit3Lab3_ShoppingList.pdb
 C:\Users\xando\source\repos\Unit3Lab3_ShoppingList\Unit3Lab3_ShoppingList\obj\Debug\net6.0\Unit3Lab3_ShoppingList.genruntimeconfig.cache
 C:\Users\xando\source\repos\Unit3Lab3_ShoppingList\Unit3Lab3_ShoppingList\obj\Debug\net6.0\ref\Unit3Lab3_ShoppingList.dll
+C:\Repositories\LABS\UNIT 3- Collections and Exceptions\Unit3Lab3_ShoppingList\Unit3Lab3_ShoppingList\bin\Debug\net6.0\Unit3Lab3_ShoppingList.exe
+C:\Repositories\LABS\UNIT 3- Collections and Exceptions\Unit3Lab3_ShoppingList\Unit3Lab3_ShoppingList\bin\Debug\net6.0\Unit3Lab3_ShoppingList.deps.json
+C:\Repositories\LABS\UNIT 3- Collections and Exceptions\Unit3Lab3_ShoppingList\Unit3Lab3_ShoppingList\bin\Debug\net6.0\Unit3Lab3_ShoppingList.runtimeconfig.json
+C:\Repositories\LABS\UNIT 3- Collections and Exceptions\Unit3Lab3_ShoppingList\Unit3Lab3_ShoppingList\bin\Debug\net6.0\Unit3Lab3_ShoppingList.dll
+C:\Repositories\LABS\UNIT 3- Collections and Exceptions\Unit3Lab3_ShoppingList\Unit3Lab3_ShoppingList\bin\Debug\net6.0\Unit3Lab3_ShoppingList.pdb
+C:\Repositories\LABS\UNIT 3- Collections and Exceptions\Unit3Lab3_ShoppingList\Unit3Lab3_ShoppingList\obj\Debug\net6.0\Unit3Lab3_ShoppingList.csproj.AssemblyReference.cache
+C:\Repositories\LABS\UNIT 3- Collections and Exceptions\Unit3Lab3_ShoppingList\Unit3Lab3_ShoppingList\obj\Debug\net6.0\Unit3Lab3_ShoppingList.GeneratedMSBuildEditorConfig.editorconfig
+C:\Repositories\LABS\UNIT 3- Collections and Exceptions\Unit3Lab3_ShoppingList\Unit3Lab3_ShoppingList\obj\Debug\net6.0\Unit3Lab3_ShoppingList.AssemblyInfoInputs.cache
+C:\Repositories\LABS\UNIT 3- Collections and Exceptions\Unit3Lab3_ShoppingList\Unit3Lab3_ShoppingList\obj\Debug\net6.0\Unit3Lab3_ShoppingList.AssemblyInfo.cs
+C:\Repositories\LABS\UNIT 3- Collections and Exceptions\Unit3Lab3_ShoppingList\Unit3Lab3_ShoppingList\obj\Debug\net6.0\Unit3Lab3_ShoppingList.csproj.CoreCompileInputs.cache
+C:\Repositories\LABS\UNIT 3- Collections and Exceptions\Unit3Lab3_ShoppingList\Unit3Lab3_ShoppingList\obj\Debug\net6.0\Unit3Lab3_ShoppingList.dll
+C:\Repositories\LABS\UNIT 3- Collections and Exceptions\Unit3Lab3_ShoppingList\Unit3Lab3_ShoppingList\obj\Debug\net6.0\refint\Unit3Lab3_ShoppingList.dll
+C:\Repositories\LABS\UNIT 3- Collections and Exceptions\Unit3Lab3_ShoppingList\Unit3Lab3_ShoppingList\obj\Debug\net6.0\Unit3Lab3_ShoppingList.pdb
+C:\Repositories\LABS\UNIT 3- Collections and Exceptions\Unit3Lab3_ShoppingList\Unit3Lab3_ShoppingList\obj\Debug\net6.0\Unit3Lab3_ShoppingList.genruntimeconfig.cache
+C:\Repositories\LABS\UNIT 3- Collections and Exceptions\Unit3Lab3_ShoppingList\Unit3Lab3_ShoppingList\obj\Debug\net6.0\ref\Unit3Lab3_ShoppingList.dll

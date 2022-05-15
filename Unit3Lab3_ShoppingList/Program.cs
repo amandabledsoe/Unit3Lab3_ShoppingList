@@ -17,22 +17,41 @@ bool runningProgram = true;
 
 Console.WriteLine("Welcome to the Shopping List Program!");
 PauseAndClearScreen();
-
 while (runningProgram)
 {
     Console.WriteLine("Here are all of the menu items available: ");
     Console.WriteLine();
     PrintAllMenuItems(menuItems);
     Console.WriteLine();
-    Console.WriteLine("Let's start adding items to your shopping list!");
-    Console.WriteLine("Enter the name of an item to add.");
-    Console.Write("Your Item Selection: ");
-    string userSelection = Console.ReadLine();
-    CheckForListItem(userSelection, menuItems, usersItems);
+    Console.WriteLine("Now, let's start adding items to your shopping list!");
+    Console.WriteLine("Enter the name of a menu item to add. Enter a blank line to stop adding entries to your shopping list at anytime.");
+    bool addingItems = true;
+    while (addingItems)
+    {
+        Console.Write("Your Item Selection: ");
+        string userSelection = Console.ReadLine();
+        if (!String.IsNullOrEmpty(userSelection))
+        {
+            CheckForListItem(userSelection, menuItems, usersItems);
+        }
+        else
+        {
+            Console.WriteLine();
+            Console.ForegroundColor = ConsoleColor.DarkGreen;
+            Console.WriteLine("All Items have been added to your shopping list!");
+            Console.ResetColor();
+            addingItems = false;
+        }
+    }
     Console.WriteLine();
     PrintAllUserItems(usersItems);
     PauseAndClearScreen();
-    runningProgram = WannaRestart();
+    bool needToClear = WannaRestart();
+    if (needToClear)
+    {
+        usersItems.Clear();
+    }
+    runningProgram = needToClear;
 }
 Console.WriteLine("Thank you for using the Shopping List Program!");
 Console.WriteLine("Goodbye...");
@@ -57,21 +76,20 @@ static void PrintAllMenuItems(Dictionary<string, double> menuItems)
         }
         else
         {
-            Console.ForegroundColor = ConsoleColor.DarkGreen;
+            Console.ForegroundColor = ConsoleColor.DarkBlue;
             Console.WriteLine(String.Format("{0,1}{1,17}{2,6}{3,1}", "", item.Key, "$", string.Format("{0:0.00}", item.Value)));
             Console.ResetColor();
         }
         counter++;
     }
 }
-
 static bool WannaRestart()
 {
     bool askingUser = true;
     while (askingUser)
     {
-        Console.WriteLine("Would you like to run this program again?");
-        Console.WriteLine("Enter 'Yes' or 'No' below");
+        Console.WriteLine("Would you like to add items to a new shopping list?");
+        Console.WriteLine("Enter 'Yes' to start a new shopping list or 'No' to end the program.");
         Console.Write("Your Choice: ");
         string userChoice = Console.ReadLine();
         string yesInput = "[Yy][Ee][Ss]";
@@ -95,25 +113,59 @@ static bool WannaRestart()
     }
     return false;
 }
-
 static void CheckForListItem(string userSelection, Dictionary<string, double> menuItems, Dictionary<string, double> usersItems)
 {
-    foreach (var item in menuItems)
+    bool isInUserList = false;
+    bool isInMenuItems = true;
+    int fixedCount = usersItems.Count;
+    foreach (var item in usersItems)
     {
         if (Regex.IsMatch(userSelection, item.Key, RegexOptions.IgnoreCase))
         {
-            usersItems.Add(item.Key,item.Value);
+            Console.ForegroundColor = ConsoleColor.Red;
+            Console.WriteLine("It looks like we already have this on the list!");
+            Console.ResetColor();
+            isInUserList = true;
+            break;
         }
     }
+    if (!isInUserList)
+    {
+        foreach (var thing in menuItems)
+        {
+            if (Regex.IsMatch(userSelection, thing.Key, RegexOptions.IgnoreCase))
+            {
+                usersItems.Add(thing.Key, thing.Value);
+            }
+        }
+        if (fixedCount == usersItems.Count)
+        {
+            Console.ForegroundColor = ConsoleColor.Red;
+            Console.WriteLine("It looks like we dont have an item by that name on our menu. Let's try again.");
+            Console.ResetColor();
+        }
+    }
+    if (!isInMenuItems)
+    {
+        Console.ForegroundColor = ConsoleColor.Red;
+        Console.WriteLine("It looks like we dont have an item by that name on our menu. Let's try again.");
+        Console.ResetColor();
+    }
 }
-
 static void PrintAllUserItems(Dictionary<string, double> usersItems)
 {
-    Console.WriteLine("Your list current contains the following items: ");
+    Console.WriteLine("Your shopping list contains the following items: ");
+    Console.WriteLine();
     foreach (var item in usersItems)
     {
+        Console.ForegroundColor = ConsoleColor.DarkYellow;
         Console.WriteLine(String.Format("{0,1}{1,17}{2,6}{3,1}", "", item.Key, "$", string.Format("{0:0.00}", item.Value)));
     }
+    Console.ResetColor();
     Console.WriteLine();
-    Console.WriteLine($"The total of your shopping list is {string.Format("{0:0.00}", usersItems.Sum(x => x.Value))}");
-}
+    Console.Write($"The total of your shopping list is $");
+    Console.ForegroundColor = ConsoleColor.DarkCyan;
+    Console.Write($"{ string.Format("{0:0.00}", usersItems.Sum(x => x.Value))}");
+    Console.ResetColor();
+    Console.Write(".");
+    Console.WriteLine();}
